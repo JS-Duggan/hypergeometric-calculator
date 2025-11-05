@@ -22,4 +22,4 @@ $$
 2. run `./a.out`
 
 3. First you will be asked to select if you are calculating probability for the flop, turn, or river. Enter 1 for flop, 2 for turn, 3 for river.
-<br><br>You will then be asked for the number of hits in deck (S) and the number of draws (n). Input these values followed by a new line, and you will then be told the probability of success
+<br><br>You will then be asked for the number of hits in deck (S) and fi you selected flop, the number of draws (n) (This will be 1 otherwise). Input these values followed by a new line, and you will then be told the probability of success

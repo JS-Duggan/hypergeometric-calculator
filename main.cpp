@@ -11,7 +11,7 @@ int main() {
 		std::cin >> draw;
 		std::cout << "Number of hits in deck: ";
 		std::cin >> S;
-		
+		k = 1;
 		if (k > S) draw = 4;
 		switch (draw) {
 			case 1:
@@ -21,11 +21,11 @@ int main() {
 			break;
 
 			case 2:
-			p = turn.prob(S, 1);
+			p = turn.prob(S, k);
 			break;
 
 			case 3:
-			p = river.prob(S, 1);
+			p = river.prob(S, k);
 			break;
 
 			case 4:

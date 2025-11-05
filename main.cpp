@@ -5,7 +5,7 @@
 int main() {
 	int S, k, draw;
 	long double p;
-	GeometricCaluclator flop(50, 3), turn(47, 1), river(46, 1);
+	GeometricCalculator flop(50, 3), turn(47, 1), river(46, 1);
 	while (true) {
 		std::cout << "Calculate probability for Flop(1), Turn(2), River(3): ";
 		std::cin >> draw;
@@ -17,15 +17,17 @@ int main() {
 			case 1:
 			std::cout << "Number of hits required: ";
 			std::cin >> k;
-			p = flop.prob(S, k);
+			p = flop.prob_atleast(S, k);
+			std::cout << std::fixed << std::setprecision(2) << "P(X >= " << k << "): " << p * 100 << "%" << std::endl;
+			p = flop.prob_exact(S, k);
 			break;
 
 			case 2:
-			p = turn.prob(S, k);
+			p = turn.prob_exact(S, k);
 			break;
 
 			case 3:
-			p = river.prob(S, k);
+			p = river.prob_exact(S, k);
 			break;
 
 			case 4:
@@ -36,6 +38,6 @@ int main() {
 			std::cout << "Invalid input" << std::endl;
 			continue;
 		}
-		std::cout << std::fixed << std::setprecision(2) << "P(X - k): " << p * 100 << "%" << std::endl;
+		std::cout << std::fixed << std::setprecision(2) << "P(X = " << k << "): " << p * 100 << "%" << std::endl;
 	}
 }
